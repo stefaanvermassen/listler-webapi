@@ -38,3 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use bcrypt to encrypt passwords in the database
+gem 'bcrypt-ruby', :require=>'bcrypt'
+
+gem 'protected_attributes'
