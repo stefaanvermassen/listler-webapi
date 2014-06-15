@@ -1,22 +1,38 @@
-<p>Sign In</p>
-<%= form_for @user, :as => :user, :url => sign_in_path do |f| %>
-    <p>
-      <%= f.label 'username or email:' %><br/>
-      <%= f.text_field :username %>
-    </p>
-    <p>
-      <%= f.label 'password:' %><br/>
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.check_box :remember_me %>
-      <%= f.label 'remember me' %>
-    </p>
-    <p>
-      <%= f.submit 'Sign In' %>&nbsp;&nbsp;&nbsp;
-      <%= f.submit 'Clear Form', :type => 'reset' %>
-    </p>
-    <p>
-      <%= link_to 'forgot your password?', :forgot_password %>
-    </p>
-<% end %>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="login-panel panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Log in to GroceryBuddy</h3>
+            </div>
+            <div class="panel-body">
+                <%= form_for @user, :as => :user, :url => sign_in_path do |f| %>
+                    <fieldset>
+                        <div class="form-group">
+                            <%= f.label 'username or email:', :class => 'col-md-12 control-label' %>
+                          <div class="col-md-12">
+                            <%= f.text_field :username, :class => 'form-control input-md' %>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <%= f.label 'password:', :class => 'col-md-12 control-label' %><br/>
+                          <div class="col-md-12">
+                            <%= f.password_field :password, :class => 'form-control input-md' %>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-md-12">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label 'remember me' %>
+                          </div>
+                        </div>
+                        <div class="form-group">
+                            <%= f.submit 'Sign In', :class => 'btn btn-block btn-success' %>
+                            <%= f.submit 'Clear Form', :class => 'btn btn-block btn-warning', :type => 'reset' %>
+                        </div>
+                    </fieldset>
+                <% end %>
+                <%= link_to 'Forgot your password?', :forgot_password %>
+            </div>
+        </div>
+    </div>
+</div>

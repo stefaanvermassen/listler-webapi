@@ -12,7 +12,10 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
  */
+*= require bootstrap
+
 
 #flash_error {
     border: 1px solid #000066;
@@ -31,3 +34,17 @@
 #error_message {
     color: #FF0000;
 }
+
+.navbar-default {
+    background-color: #7dba4d;
+    border-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
