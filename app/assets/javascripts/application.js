@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap
+//= require sb-admin
+//= require adatatablesjquery
+//= require datatables
+//= require metismenu

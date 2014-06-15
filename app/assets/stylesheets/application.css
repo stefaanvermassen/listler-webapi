@@ -15,7 +15,9 @@
  *= require bootstrap
  */
 *= require bootstrap
-
+*= require sb-admin
+*= require datatables
+*= require font-awesome
 
 #flash_error {
     border: 1px solid #000066;
@@ -35,16 +37,5 @@
     color: #FF0000;
 }
 
-.navbar-default {
-    background-color: #5cb85c;
-    border-color: transparent;
-}
 
-.navbar-default .navbar-brand {
-    color: white;
-}
-
-.navbar-default .navbar-nav > li > a {
-    color: white;
-}
 

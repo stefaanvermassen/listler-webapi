@@ -17,7 +17,7 @@ class AuthenticationController < ApplicationController
       user.last_signed_in_on=DateTime.now
       user.save
       session[:user_id] = user.id
-      flash[:notice] = 'Welcome.'
+      flash[:notice] = 'Welcome ' + user.username + '!'
       redirect_to :root
     else
       flash.now[:error] = 'Unknown user.  Please check your username and password.'
