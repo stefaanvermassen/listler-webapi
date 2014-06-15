@@ -8,6 +8,7 @@ class AuthenticationController < ApplicationController
   # ========= Signing In ==========
 
   def login
+    @user = User.new(params[:user])
     username_or_email = params[:user][:username]
     user = verify_user(username_or_email)
 
@@ -49,26 +50,19 @@ class AuthenticationController < ApplicationController
   def register
     @user = User.new(params[:user])
 
-    # Don't use !verify_recaptcha, as this terminates the connection with the server.
-    # It almost seems as if the verify_recaptcha is being called twice with we use "not".
-    if verify_recaptcha
-      if @user.valid?
-        update_authentication_token(@user, nil)
-        @user.signed_up_on = DateTime.now
-        @user.last_signed_in_on = @user.signed_up_on
-        @user.save
-        # UserMailer.welcome_email(@user).deliver
-        session[:user_id] = @user.id
-        flash[:notice] = 'Welcome.'
-        redirect_to :root
-      else
-        render :action => "new_user"
-      end
+    if @user.valid?
+      update_authentication_token(@user, nil)
+      @user.signed_up_on = DateTime.now
+      @user.last_signed_in_on = @user.signed_up_on
+      @user.save
+      # UserMailer.welcome_email(@user).deliver
+      session[:user_id] = @user.id
+      flash[:notice] = 'Welcome.'
+      redirect_to :root
     else
-      flash.delete(:recaptcha_error)  # get rid of the recaptcha error being flashed by the gem.
-      flash.now[:error] = 'reCAPTCHA is incorrect.  Please try again.'
       render :action => "new_user"
     end
+
   end
 
   # ========= Handles Changing Account Settings ==========
