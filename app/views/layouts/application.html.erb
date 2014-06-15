@@ -21,8 +21,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
+
                 <li><%= link_to "Sign Out", signed_out_path %></li>
-                <li><%= link_to "Account Settings", account_settings_path %></li>
+                <li><%= link_to "My account", account_settings_path %></li>
             <% else %>
                 <li><%= link_to "Sign up", new_user_path %></li>
                 <li><%= link_to "Sign In", sign_in_path %></li>

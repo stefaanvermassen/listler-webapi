@@ -93,7 +93,7 @@ class AuthenticationController < ApplicationController
         # If there is a new_password value, then we need to update the password.
         @user.password = @user.new_password unless @user.new_password.nil? || @user.new_password.empty?
         @user.save
-        flash[:notice] = 'Account settings have been changed.'
+        flash[:notice] = 'Your account has been updated.'
         redirect_to :root
       else
         render :action => "account_settings"
