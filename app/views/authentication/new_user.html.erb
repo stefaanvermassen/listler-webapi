@@ -2,27 +2,27 @@
   <div class="col-md-4 col-md-offset-4">
     <div class="login-panel panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Sign up</h3>
+        <h3 class="panel-title">Introduce yourself!</h3>
       </div>
       <div class="panel-body">
         <%= form_for @user, :as => :user, :html => {:role => 'form'}, :url => new_user_path do |f| %>
             <div class="form-group">
-              <%= f.label 'username' %>
+              <%= f.label :username, 'I want this username:' %>
               <%= f.text_field :username, :placeholder => "Enter a username", :class => 'form-control' %>
               <%= show_field_error(@user, :username) %>
             </div>
             <div class="form-group">
-              <%= f.label 'email' %>
+              <%= f.label :email, 'Here is my email address:' %>
               <%= f.text_field :email, :placeholder => "Enter your emailaddress", :class => 'form-control' %>
               <%= show_field_error(@user, :email) %>
             </div>
             <div class="form-group">
-              <%= f.label 'password:' %>
+              <%= f.label :password, 'I want to use this password:' %>
               <%= f.password_field :password, :placeholder => "Enter a password", :class => 'form-control' %>
               <%= show_field_error(@user, :password) %>
             </div>
             <div class="form-group">
-              <%= f.label 'confirm password:' %>
+              <%= f.label 'Yes, to be sure, I mean this password:' %>
               <%= f.password_field :password_confirmation, :placeholder => "Confirm password", :class => 'form-control' %>
               <%= show_field_error(@user, :password_confirmation) %>
             </div>
@@ -31,8 +31,8 @@
               <%= f.label 'remember me' %>
             </div>
             <div class="form-group">
-              <%= f.submit 'Sign Up', :class => 'btn btn-block btn-success' %>
-              <%= f.submit 'Clear Form', :class => 'btn btn-block btn-warning', :type => 'reset' %>
+              <%= f.submit 'Sign me up!', :class => 'btn btn-block btn-success' %>
+              <%= f.submit 'Clear all the things!', :class => 'btn btn-block btn-warning', :type => 'reset' %>
             </div>
         <% end %>
       </div>
