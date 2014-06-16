@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :user_lists
+  has_many :lists, through: :user_lists
   attr_accessible :email, :username, :password, :password_confirmation, :new_password, :new_password_confirmation, :remember_me, :is_admin
   attr_accessor :password, :new_password, :previous_email, :previous_username, :remember_me
   before_save :encrypt_password
