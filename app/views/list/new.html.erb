@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="login-panel panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Introduce yourself!</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_for @list, :as => :list, :html => {:role => 'form'}, :url => new_list_path do |f| %>
+            <div class="form-group">
+              <%= f.label :name, 'I want this name:' %>
+              <%= f.text_field :name, :placeholder => "Enter a name", :class => 'form-control' %>
+              <%= show_field_error(@list, :name) %>
+            </div>
+            <div class="form-group">
+              <%= f.submit 'Sign me up!', :class => 'btn btn-block btn-success' %>
+              <%= f.submit 'Clear all the things!', :class => 'btn btn-block btn-warning', :type => 'reset' %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

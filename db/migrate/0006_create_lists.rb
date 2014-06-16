@@ -1,8 +1,7 @@
 class CreateLists < ActiveRecord::Migration
   def change
     create_table :lists do |t|
-      t.integer :list_item_id
-
+      t.string :name
       t.timestamps
     end
   end

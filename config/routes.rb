@@ -27,6 +27,9 @@ Rails.application.routes.draw do
    get "admin_users" => "admin#users"
    delete "user/:id" => "admin#delete_user", :as => "user"
 
+  get "new_list" => "list#new"
+  post "new_list" => "list#create"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

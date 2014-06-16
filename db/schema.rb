@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 7) do
   end
 
   create_table "lists", force: true do |t|
-    t.integer  "list_item_id"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
