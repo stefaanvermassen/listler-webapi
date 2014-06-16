@@ -12,29 +12,18 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap
- */
 *= require bootstrap
 *= require sb-admin
 *= require datatables
 *= require font-awesome
-
-#flash_error {
-    border: 1px solid #000066;
-    padding: 4px;
-    margin-bottom: 10px;
-    background-color: #cc3333;
-}
-
-#flash_notice {
-    border: 1px solid #000066;
-    padding: 4px;
-    margin-bottom: 10px;
-    background-color: #A3B15A;
-}
+ */
 
 #error_message {
     color: #FF0000;
+}
+
+.white_background {
+    background-color: #ffffff;
 }
 
 

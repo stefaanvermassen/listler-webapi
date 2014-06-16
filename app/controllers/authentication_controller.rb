@@ -57,7 +57,7 @@ class AuthenticationController < ApplicationController
       @user.save
       # UserMailer.welcome_email(@user).deliver
       session[:user_id] = @user.id
-      flash[:notice] = 'Welcome.'
+      flash[:notice] = 'Welcome ' + @user.username + '.'
       redirect_to :root
     else
       render :action => "new_user"
